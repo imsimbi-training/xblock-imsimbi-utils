@@ -8,7 +8,7 @@ from django.conf import settings
 
 register = template.Library()  # pylint: disable=invalid-name
 
-
+print('Registering imsimbi_utils tags')
 
 @register.simple_tag(name="registration_url")
 def registration_url():
