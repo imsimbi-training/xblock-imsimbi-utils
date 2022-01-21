@@ -38,5 +38,5 @@ setup(
             'xblock_imsimbi_utils = xblock_imsimbi_utils:ImsimbiUtilsXBlock',
         ]
     },
-    package_data=package_data("xblock_imsimbi_utils", ["static", "public"]),
+    package_data=package_data("xblock_imsimbi_utils", ["static", "public", "templatetags"]),
 )
