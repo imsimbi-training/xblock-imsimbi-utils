@@ -35,6 +35,7 @@ def get_version(*file_paths):
 README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 VERSION = get_version("xblock_imsimbi_utils", "__init__.py")
 
+print('imsimbi_util setup')
 setup(
     name='xblock_imsimbi_utils',
     version=VERSION,
