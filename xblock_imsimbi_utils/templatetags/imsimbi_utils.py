@@ -24,3 +24,12 @@ def imsimbi_registration_url_email(email):
     {{ email|imsimbi_registration_url_email }}
     """
     return settings.IMSIMBI_REGISTRATION_URL+"?email="+email
+
+
+@register.simple_tag(name="imsimbi_profile_url")
+def imsimbi_profile_url():
+    """
+    Django template tag that outputs the URL of the registration page
+    {% imsimbi_registration_url %}
+    """
+    return settings.IMSIMBI_PROFILE_URL
