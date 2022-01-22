@@ -5,6 +5,7 @@ from web_fragments.fragment import Fragment
 from xblock.core import XBlock
 from xblock.fields import Integer, Scope
 
+print('imsimbi_utils ImsimbiUtilsXBlock')
 
 class ImsimbiUtilsXBlock(XBlock):
     """
