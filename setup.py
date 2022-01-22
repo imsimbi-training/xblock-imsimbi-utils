@@ -3,9 +3,10 @@
 import os
 import os.path
 import re
-import sys
 from setuptools import setup
+import logging
 
+log = logging.getLogger(__name__)
 
 def package_data(pkg, root_list):
     """Generic function to find package_data for `pkg` under `root`."""
@@ -36,6 +37,8 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 VERSION = get_version("xblock_imsimbi_utils", "__init__.py")
 
 print('imsimbi_util setup')
+log.info('imsimbi_util setup log')
+
 setup(
     name='xblock_imsimbi_utils',
     version=VERSION,
@@ -49,11 +52,11 @@ setup(
     install_requires=[
         'XBlock',
     ],
-    # entry_points={
-    #     'xblock.v1': [
-    #         'xblock_imsimbi_utils = xblock_imsimbi_utils:ImsimbiUtilsXBlock',
-    #     ]
-    # },
+    entry_points={
+        'xblock.v1': [
+            'xblock_imsimbi_utils = xblock_imsimbi_utils:ImsimbiUtilsXBlock',
+        ]
+    },
     package_data=package_data("xblock_imsimbi_utils", ["public", "static", "templatetags"]),
     url='https://github.com/imsimbi-training/xblock-imsimbi-utils',
     classifiers=[
