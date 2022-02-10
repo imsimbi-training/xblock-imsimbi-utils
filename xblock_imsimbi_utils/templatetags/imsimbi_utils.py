@@ -5,6 +5,8 @@ Template tags and helper functions for email templates
 
 from django import template
 from django.conf import settings
+from urllib.parse import quote
+
 
 register = template.Library()  # pylint: disable=invalid-name
 
@@ -33,3 +35,13 @@ def imsimbi_profile_url():
     {% imsimbi_registration_url %}
     """
     return settings.IMSIMBI_PROFILE_URL
+
+@register.filter(name="imsimbi_account_activation_url")
+def imsimbi_account_activation_url(openedx_url):
+    """
+    Django template filter to return an activation url that is handled by the Imsimbi app rather than the openedx LMS.
+    {{ openedx_url|imsimbi_account_activation_url }}
+    """
+    return settings.IMSIMBI_REGISTRATION_URL+"?activation_url="+quote(openedx_url)
+
+
