@@ -42,6 +42,6 @@ def imsimbi_account_activation_url(openedx_url):
     Django template filter to return an activation url that is handled by the Imsimbi app rather than the openedx LMS.
     {{ openedx_url|imsimbi_account_activation_url }}
     """
-    return settings.IMSIMBI_REGISTRATION_URL+"?activation_url="+quote(openedx_url)
+    return settings.IMSIMBI_ACTIVATION_URL+"?activation_url="+quote(openedx_url)
 
 
