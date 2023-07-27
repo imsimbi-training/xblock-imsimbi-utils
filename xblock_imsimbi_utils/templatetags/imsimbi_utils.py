@@ -12,7 +12,7 @@ register = template.Library()  # pylint: disable=invalid-name
 
 
 @register.tag(name="imsimbi_registration_url")
-def imsimbi_registration_url(email):
+def imsimbi_registration_url():
     """
     Django template tag that outputs the URL of the registration page
     {% imsimbi_registration_url %}
@@ -31,7 +31,7 @@ def imsimbi_registration_url_email(email):
 
 
 @register.tag(name="imsimbi_profile_url")
-def imsimbi_profile_url(email):
+def imsimbi_profile_url():
     """
     Django template tag that outputs the URL of the registration page
     {% imsimbi_registration_url %}
