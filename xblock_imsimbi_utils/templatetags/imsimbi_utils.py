@@ -11,8 +11,8 @@ from urllib.parse import quote
 register = template.Library()  # pylint: disable=invalid-name
 
 
-@register.simple_tag(name="imsimbi_registration_url")
-def imsimbi_registration_url():
+@register.filter(name="imsimbi_registration_url")
+def imsimbi_registration_url(email):
     """
     Django template tag that outputs the URL of the registration page
     {% imsimbi_registration_url %}
